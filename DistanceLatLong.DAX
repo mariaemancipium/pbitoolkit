@@ -1,0 +1,19 @@
+Distance (Mi) = 
+VAR Lat1 = FIRSTNONBLANK('Treatments by Zip'[Hsp Lat],'Treatments by Zip'[Hsp Lat])
+VAR Lng1 = FIRSTNONBLANK('Treatments by Zip'[Hsp Lon],'Treatments by Zip'[Hsp Lon])
+VAR P =
+    DIVIDE ( PI (), 180 )
+RETURN
+    MINX (
+        'Treatments by Zip',
+        VAR Lat2 = FIRSTNONBLANK('Treatments by Zip'[Patient Lat],'Treatments by Zip'[Patient Lat])
+        VAR Lng2 = FIRSTNONBLANK('Treatments by Zip'[Patient Lon],'Treatments by Zip'[Patient Lon])
+        //---- Algorithm here -----
+        VAR A =
+            0.5 - COS ( ( Lat2 - Lat1 ) * P ) / 2
+                + COS ( Lat1 * P ) * COS ( lat2 * P ) * ( 1 - COS ( ( Lng2 - Lng1 ) * P ) ) / 2
+        VAR final =
+            7917.5117 * ASIN ( ( SQRT ( A ) ) )
+        RETURN
+            final
+    )
