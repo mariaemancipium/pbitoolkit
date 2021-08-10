@@ -16,8 +16,8 @@ On line 17, replace [dateindex] with the column name containing your date index.
 If you want to change the line color, adjust the hexadecimal reference on line 4.
 
 
-**Distance Calculator**
 
+**Distance Calculator:**
 I am indebited to a plethora of online sources explaining how to use the great circles formula, especially but not limited to Phil Seamark's Post here: https://dax.tips/2017/05/13/dynamic-distances-in-power-bi
 
 Basically, since Lattitue and Longitude are descriptions of relative location on a sphere, it is possible to caculate distance using trigonometry.
@@ -29,6 +29,5 @@ Replace "Treatments by Zip'[Hsp Lon]" on line 3 with a reference to a column con
 Replace "Treatments by Zip'[Patient Lat]' on line 9 with a reference to a column containing the latitude of your second point. Yes, it has to be repeated twice.
 
 Replace "Treatments by Zip'[Patient Lon]' on line 9 with a reference to a column containing the longitude of your second point. Yes, it has to be repeated twice.
-
 
 Replace 'Treatments by Zip' on line 8 with the table containing all of these points.
